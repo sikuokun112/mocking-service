@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: Sample Product API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
+servers:
+  - url: http://localhost:8080
+    description: Local
+paths:
+  /products-tai/{id}:
+    get:
+      summary: Get Products
+      description: Get Products
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: number
+          required: true
+          description: Numerical Product Id
+      responses:
+        '200':
+          description: Returns Product With Id
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - name
+                  - sku
+                  - sku
+                properties:
+                  name:
+                    type: string
+                  sku:
+                    type: string
+  /products:
+    post:
+      summary: Add Product
+      description: Add Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - sku
+              properties:
+                name:
+                  type: string
+                sku:
+                  type: string
+      responses:
+        '200':
+          description: Returns Product With Id
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                properties:
+                  id:
+                    type: integer
+  /storestatus:
+    get:
+      summary: Get the status of the store
+      responses:
+        '200':
+          description: Status of the store
+          content:
+            text/plain:
+              schema:
+                type: string
