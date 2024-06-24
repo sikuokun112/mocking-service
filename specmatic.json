@@ -2,9 +2,9 @@
   "sources": [
     {
       "provider": "git",
-      "repository": "https://github.com/znsio/specmatic-order-contracts.git",
+      "repository": "https://gitlab.com/sikuokun11/test-events.git",
       "stub": [
-        "in/specmatic/examples/store"
+        "contracts"
       ]
     }
   ]

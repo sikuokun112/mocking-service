@@ -10,6 +10,8 @@ public class MyApplication {
     public static void main(String[] args) {
 
         // Start specmatic.jar in a separate thread
+        // trigger when api handleAnyPath form GitService is called
+        // then restart the process
         new Thread(() -> {
             try {
                 Process process = new ProcessBuilder("java", "-jar", "specmatic.jar", "stub").start();
